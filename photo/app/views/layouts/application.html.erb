@@ -13,10 +13,11 @@
   <body>
   <h1>MyInstagramCopyCat</h1>
   <% if user_signed_in? %>
-  <%= link_to('Edit', edit_user_registration_path)  %>  |
-    <%= button_to('Logout', destroy_user_session_path, method: :delete) %>          
+  <%= button_to('Edit Profile', edit_user_registration_path, method: :get)  %>  |
+    <%= button_to('Logout', destroy_user_session_path, method: :delete) %>   
+    <h2>Hello, <%= current_user.name %>       
   <% else %>
-    <%= link_to('Login', new_user_session_path)  %> |
+    <%= link_to('Login', new_user_session_path)  %>
     <%= link_to('Sign Up', new_user_registration_path)  %>  
   <% end %>
 </nav>
